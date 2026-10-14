@@ -1,5 +1,10 @@
 # TASK 2 · PROSECUTE — `eval/prosecute.py`
 
+**Bản đã triển khai:** 9 detector tất định, 8 hook ngữ nghĩa còn abstain.
+40 fixture: precision 1.000, recall 0.529, F1 0.692, false_claim_rate 0.000;
+18 VERIFIED, 0 unproven/false/rejected. Phần mô tả starter bên dưới là baseline
+lịch sử. Xem [IMPLEMENTATION.md](IMPLEMENTATION.md) để đọc chính sách hiện tại.
+
 > **Không chỉ ra được thì không có sát thương.** Một đòn tấn công của bạn dù trúng đến đâu, nếu
 > đối thủ không nêu được bằng chứng thì trọng tài không chấm điểm gì cả. Và ngược lại: khi BẠN là
 > bên cáo buộc, việc bạn phải làm không phải là "tìm ra lỗi" mà là **chứng minh nó, đúng sự kiện,

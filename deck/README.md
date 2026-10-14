@@ -119,42 +119,14 @@ defending agent actually reads `drift.json`'s `drifts` flag rather than eyeballi
 
 ---
 
-## 4. This deck, card by card
+## 4. Bộ bài của đội sau chỉnh sửa
 
-| id | class | layer | ask | target |
-|---|---|---|---|---|
-| `atk_01` | `shadow` | MCP | `which_day_covers` — Concept:baggage (day23) | `mcp:slides` → decoy day7 |
-| `atk_02` | `replica_flip` | gateway | `which_day_covers` — Concept:stategraph (day9) | `mcp:slides`, path_id `e0614beb` |
-| `atk_03` | `drift` | MCP | `current_version_of` — path_id `053195a5` (day14) | `mcp:slides`, content swap |
-| `atk_04` | `poisoned_result` | MCP | `define_term` — "streamable http transport" | `mcp:research` ← injected `Note:` |
-| `atk_05` | `schema_bomb` | MCP | `define_term` — "mcp registry" | `mcp:registry` → +40 decoy rows |
-| `atk_06` | `header_spoof` | gateway | `record_mastery` — Learner:sv-0417 | `mcp:progress` write, headers dropped |
-| `atk_07` | `identity` | A2A | `which_day_covers` — Concept:trace (day9) | `a2a:curriculum-analyst`, `act` → sv-0392 |
-| `atk_08` | `forged_card` | A2A | `define_term` — "agent card" | `a2a:citation-checker` card tampered |
-| `atk_09` | `faithless_peer` | A2A | `which_day_covers` — Concept:action (day9) | `a2a:curriculum-analyst` lies: course_day 4 |
-| `atk_10` | `identity` | A2A | `define_term` — "delegation depth" | `a2a:roster`, `aud` → curriculum-analyst |
-| `blk_01`–`blk_04` | — | — | `define_term` / `which_day_covers` / `whatlinkshere` / `source_of` | unmutated |
+Bộ bài hiện tại đã được chỉnh; bảng starter bên dưới trong lịch sử git không còn
+mô tả deck.json. Xem [AUTHORING.md](AUTHORING.md) để biết mục tiêu từng lá,
+lý do chọn mutation, lineup có một blank, kết quả spar và giới hạn đo lường.
 
-Layer balance: **4 MCP · 2 gateway · 4 A2A** (≥3/≥2/≥3 required). Distinct classes: **9 of 9**
-(≥6 required — every duel class appears at least once). `atk_02` is the deck's only
-`replica_flip` card and its `path_id` (`e0614beb`) is in the measured drift set (`world.drifts()`
-returns `true`); `atk_03`'s `drift`-class card is held to the identical mechanical requirement
-even though it is not literally named `replica_flip` (`validate_deck.py`'s `R5b` rule) — its
-`path_id` (`053195a5`) is also a real drift-set member.
-
-**`deck/lineup.json`** plays all 10 attacks, none of the 4 blanks, in this order:
-
-```
-atk_05 (schema_bomb, cheap opener) → atk_01 (shadow) → atk_04 (poisoned_result) →
-atk_08 (forged_card) → atk_03 (drift) → atk_09 (faithless_peer) → atk_06 (header_spoof) →
-atk_02 (replica_flip) → atk_10 (identity/aud) → atk_07 (identity/act, CONTRACTS' own worked case, saved for last)
-```
-
-Layers alternate deliberately (MCP, MCP, MCP, A2A, MCP, A2A, gateway, gateway, A2A, A2A) so a
-defender who hardens against whatever landed last round is still exposed the next. **Benching
-all 4 blanks is this starter's own aggressive choice, not a rule** — trading an attack for a
-blank, and where in the order to place it, is exactly the strategic lever RULES.md's blank
-mechanic creates. Pull it if your own deck wants to bait a false positive instead.
+Cân bằng vẫn là **4 MCP · 2 gateway · 4 A2A**, đủ **9 lớp**.
+Lineup chơi 9 attack và 1 blank, không lặp. Mọi defense_event đã là gateway.denied.
 
 ---
 
